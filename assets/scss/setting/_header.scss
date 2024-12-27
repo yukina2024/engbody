@@ -1,0 +1,26 @@
+@use "utility" as *;
+
+/*---------------------------   
+header         
+---------------------------*/       
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.header__inner {
+    width: min(100% - 35px, 1440px);
+    padding-inline-start: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include mq(md) {
+        padding-inline: 20px;
+    }
+}
+.header__btn{
+    opacity: 0;
+}

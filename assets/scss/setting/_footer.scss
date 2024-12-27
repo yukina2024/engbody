@@ -1,0 +1,47 @@
+@use "utility" as *;
+
+/***************************************
+footer
+****************************************/
+
+.footer {
+    width: 100%;
+    height: 223px;
+    background-color: $basic-c;
+    color: #fff;
+    position: relative;
+}
+.footer__inner {
+    @include flex-center;
+    width: $content-width;
+    height: 100%;
+    margin: 0 auto;
+    padding-inline: 35px;
+    @include mq(md) {
+        padding-inline: 20px;
+    }
+}
+.top__btn{
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    color: $sub-c;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    display: grid;
+    place-items: center;
+    .top__btn-link{
+        display: inline-block;
+        color: inherit;
+        line-height: 1;
+        width: 1.5em;
+        height: 1.5em;
+        border: 0.3em solid currentColor;
+        border-left: 0;
+        border-bottom: 0;
+        transform: translateY(25%) rotate(-45deg);
+    }
+}

@@ -11,7 +11,7 @@
 /*whith*/
 
 //content
-$content-width: 1280px;
+$content-width: 1440px;
 
 //section
 $section-width: 901px;
@@ -21,13 +21,15 @@ $width-clac-5: calc(100% - 5%);
 
 /*color*/
 
-$basic-c: #1B224C;
+$basic-c: #111111;
 
-$sub-c: #F5A623;            
+$sub-c: #EB51C2;            
 
-$accent-c: #F8F8F8;
+$accent-c: #00B21B;
 
-$boder-c:#707070;
+$boder-c:#D9D9D9;
+
+$boder-sub-c:#CCCCCC;
 
 /*font-size*/
 
@@ -120,6 +122,6 @@ $breakpoints: (
 }
 
 /* 
-        @include flex-center;
+    @include flex-center;
     */
 

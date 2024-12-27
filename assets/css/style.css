@@ -1,0 +1,632 @@
+@charset "UTF-8";
+/* 日本語 */
+/*
+---------------------------
+@use 'utility' as *;
+---------------------------
+*/
+/*---------------------------
+変数
+---------------------------*/
+/*whith*/
+/*color*/
+/*font-size*/
+/* 使用例
+.example {
+  font-size: fz(32); // 32px → 2remに変換される
+}
+*/
+/*
+【whith 1280】
+12 = 0.75rem
+14 = 0.875rem
+16 = 1rem
+18 = 1.125rem
+20 = 1.25rem
+24 = 1.5rem
+32 = 2rem
+*/
+/* z-index */
+/*---------------------------
+mixin
+---------------------------*/
+/* ブレイクポイントメディアクエリ用 */
+/* 
+@include mq(md) {
+    display: block;
+    } 
+*/
+/* flex */
+/* 
+    @include flex();
+    */
+/* 
+    @include flex-center;
+    */
+/*---------------------------
+主なレイアウト
+---------------------------*/
+.fv__inner {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.fv__wapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.fv__img-wapper {
+  display: block;
+  width: 1060px;
+  height: 680px;
+  border-radius: 0 0 0 90px;
+}
+
+.fv__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0 0 0 90px;
+}
+
+.fv__heading-wapper {
+  position: absolute;
+  top: 30%;
+  left: 14%;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+}
+
+.fv__heading {
+  font-size: 5.625rem;
+  line-height: 1;
+  font-family: "Josefin Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.fv__heading-text {
+  background-color: #fff;
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.fv__heading-sub {
+  -webkit-margin-before: 20px;
+          margin-block-start: 20px;
+  font-size: 1.75rem;
+  line-height: 1;
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.fv__btn {
+  -webkit-margin-before: 30px;
+          margin-block-start: 30px;
+}
+
+.fv__text-wapper {
+  width: 100%;
+  -webkit-margin-before: -30px;
+          margin-block-start: -30px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.fv__title {
+  font-size: 6.75rem;
+  line-height: 1;
+  font-family: "Josefin Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: italic;
+  color: #EB51C2;
+}
+
+.fv__text-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  -webkit-margin-before: 10px;
+          margin-block-start: 10px;
+}
+
+.fv__text {
+  font-size: 1rem;
+  line-height: 2;
+  -webkit-margin-before: 25px;
+          margin-block-start: 25px;
+}
+
+/***************************************
+about
+****************************************/
+.about {
+  width: 100%;
+  -webkit-margin-before: 100px;
+          margin-block-start: 100px;
+  margin-inline: auto;
+}
+
+.about__inner {
+  width: min(100% - 20px, 1440px);
+}
+
+.about__media {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: end;
+      -ms-flex-align: end;
+          align-items: end;
+}
+.about__media .media__img {
+  width: min(100%, 950px);
+  height: 550px;
+}
+.about__media .media__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about__media:last-child {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-margin-before: 100px;
+          margin-block-start: 100px;
+}
+.about__media .media__body {
+  width: 435px;
+  height: 348px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  -webkit-margin-start: -85px;
+          margin-inline-start: -85px;
+  border-radius: 8px;
+  padding: 60px;
+  position: relative;
+  z-index: 1;
+}
+.about__media .media__body:last-of-type {
+  -webkit-margin-end: -85px;
+          margin-inline-end: -85px;
+}
+.about__media .media__heading {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: #EB51C2;
+}
+.about__media .media__title {
+  font-size: 2rem;
+  line-height: 1.5;
+  font-weight: bold;
+  -webkit-margin-before: 20px;
+          margin-block-start: 20px;
+}
+.about__media .media__text {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+  -webkit-margin-before: 15px;
+          margin-block-start: 15px;
+}
+
+.about__btn {
+  width: 100%;
+  -webkit-margin-before: 70px;
+          margin-block-start: 70px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* ------------------------------ */
+/*          リセットCSS */
+/* ------------------------------ */
+html {
+  color: #000;
+  background: #fff;
+}
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+​ address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+​ol,
+ul {
+  list-style: none;
+}
+
+caption,
+th {
+  text-align: left;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+q:before,
+q:after {
+  content: "";
+}
+
+​abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input,
+textarea,
+select,
+button {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  font-size: 100%;
+  border-radius: 0;
+  border: none;
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  background-color: inherit;
+}
+
+​input,
+textarea,
+select {
+  font-size: 16px;
+}
+
+​textarea {
+  resize: vertical;
+  display: block;
+}
+
+​button {
+  padding: 0;
+  cursor: pointer;
+}
+
+​legend {
+  color: #000;
+}
+
+​main {
+  display: block;
+}
+
+​a {
+  text-decoration: none;
+  color: inherit;
+}
+
+​img {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+​svg {
+  display: block;
+}
+
+​* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+summary {
+  display: block; /* デフォルトでは inline-block なので block に変更 */
+  list-style: none; /* デフォルトのリストスタイルを消す */
+  padding: 0; /* デフォルトのパディングを消す */
+  margin: 0; /* デフォルトのマージンを消す */
+  font-weight: normal; /* デフォルトのフォントウェイトを消す */
+  color: inherit; /* デフォルトのテキストカラーを親要素から継承 */
+  background: none; /* デフォルトの背景を消す */
+  border: none; /* デフォルトのボーダーを消す */
+}
+
+button {
+  all: unset; /* すべてのプロパティを初期化 */
+  display: inline-block; /* インラインブロック要素にする */
+  background: none; /* 背景を削除 */
+  border: none; /* ボーダーを削除 */
+  padding: 0; /* パディングを削除 */
+  margin: 0; /* マージンを削除 */
+  font: inherit; /* フォントの継承 */
+  cursor: pointer; /* カーソルをポインターにする */
+  text-align: center; /* テキストの中央揃え */
+  line-height: normal; /* 行の高さをデフォルトに設定 */
+  /* 必要に応じてその他のプロパティを追加 */
+}
+
+/*---------------------------   
+header         
+---------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header__inner {
+  width: min(100% - 35px, 1440px);
+  -webkit-padding-start: 35px;
+          padding-inline-start: 35px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .header__inner {
+    padding-inline: 20px;
+  }
+}
+
+.header__btn {
+  opacity: 0;
+}
+
+/***************************************
+footer
+****************************************/
+.footer {
+  width: 100%;
+  height: 223px;
+  background-color: #111111;
+  color: #fff;
+  position: relative;
+}
+
+.footer__inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding-inline: 35px;
+}
+@media screen and (max-width: 767px) {
+  .footer__inner {
+    padding-inline: 20px;
+  }
+}
+
+.top__btn {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  color: #EB51C2;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 20px;
+  display: grid;
+  place-items: center;
+}
+.top__btn .top__btn-link {
+  display: inline-block;
+  color: inherit;
+  line-height: 1;
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.3em solid currentColor;
+  border-left: 0;
+  border-bottom: 0;
+  -webkit-transform: translateY(25%) rotate(-45deg);
+          transform: translateY(25%) rotate(-45deg);
+}
+
+/***************************************
+共通パーツ
+****************************************/
+/*
+*{
+    outline: 1px solid red !important;
+}
+
+*/
+/* ゆっくり遷移する */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Zen Kaku Gothic Antique", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  color: #111111;
+}
+
+a {
+  text-decoration: none;
+  color: #111111;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+details summary::-webkit-details-marker {
+  /* iOSで表示されるデフォルトの三角形アイコンを消す */
+  display: none;
+}
+
+/* ハンバーメニューが開いたときに下の要素へのクリックを無効化 */
+.body-no-scroll {
+  pointer-events: none;
+}
+
+.font-c-pink {
+  color: #EB51C2;
+}
+
+/* デフォルトでは横に並べる */
+.sp__br {
+  display: inline;
+}
+@media screen and (max-width: 767px) {
+  .sp__br {
+    display: block;
+  }
+}
+
+.l-section {
+  width: min(100% - 20px, 1440px);
+}
+
+/***************************************
+btn
+****************************************/
+.btn__primary {
+  display: inline-block;
+  width: min(100%, 370px);
+  height: 80px;
+  aspect-ratio: 370/80;
+  background-color: #EB51C2;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 50px;
+  display: grid;
+  place-items: center;
+}
+
+/***************************************
+title
+****************************************//*# sourceMappingURL=style.css.map */
