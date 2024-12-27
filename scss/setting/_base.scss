@@ -1,0 +1,46 @@
+
+@use "utility" as *;
+
+/*---------------------------
+base
+---------------------------*/
+
+/*
+*{
+    outline: 1px solid red !important;
+}
+
+*/
+
+body{
+    font-family: "hiragino-kaku-gothic-pron", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    color: $basic-c;
+}
+
+a{
+    text-decoration: none;
+    color: $basic-c;
+}
+
+ul,li{
+    list-style: none;
+}
+figure{
+    margin: 0;
+    padding: 0;
+}
+
+details summary::-webkit-details-marker {
+    /* iOSで表示されるデフォルトの三角形アイコンを消す */
+    display: none;
+  }
+/* ハンバーメニューが開いたときに下の要素へのクリックを無効化 */
+.body-no-scroll {
+    pointer-events: none;
+}

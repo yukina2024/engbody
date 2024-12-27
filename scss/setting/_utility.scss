@@ -1,0 +1,125 @@
+/*
+---------------------------
+@use 'utility' as *;
+---------------------------
+*/
+
+/*---------------------------
+変数
+---------------------------*/
+
+/*whith*/
+
+//content
+$content-width: 1280px;
+
+//section
+$section-width: 901px;
+
+//sp
+$width-clac-5: calc(100% - 5%);
+
+/*color*/
+
+$basic-c: #1B224C;
+
+$sub-c: #F5A623;            
+
+$accent-c: #F8F8F8;
+
+$boder-c:#707070;
+
+/*font-size*/
+
+$font-size-48: clamp(2rem, 1.667rem + 1.67vw, 3rem);
+//32-48
+$font-size-36: clamp(1.75rem, 1.583rem + 0.83vw, 2.25rem);
+//28-36
+$font-size-32: clamp(1.625rem, 1.5rem + 0.63vw, 2rem);
+//26-32
+$font-size-26: clamp(1.25rem, 1.125rem + 0.63vw, 1.625rem);
+//20-26
+$font-size-18: clamp(0.875rem, 0.792rem + 0.42vw, 1.125rem);
+//14-18
+$font-size-16: clamp(0.75rem, 0.667rem + 0.42vw, 1rem);
+//12-16
+
+@function fz($px) {
+  @return ($px / 16) * 1rem;
+}
+
+/* 使用例
+.example {
+  font-size: fz(32); // 32px → 2remに変換される
+}
+*/
+/*
+【whith 1280】
+12 = 0.75rem
+14 = 0.875rem
+16 = 1rem
+18 = 1.125rem
+20 = 1.25rem
+24 = 1.5rem
+32 = 2rem
+*/
+
+/* z-index */
+
+$z-index-back: -1;
+
+$z-index-default: 1;
+
+$z-index-defaultplus: 2;
+
+$z-index-50: 50;
+
+$z-index-100: 100;
+
+$z-index-max: 9999;
+
+/*---------------------------
+mixin
+---------------------------*/
+
+/* ブレイクポイントメディアクエリ用 */
+
+$breakpoints: (
+  "sp": "screen and (max-width: 450px)",
+  "md": "screen and (max-width: 767px)",
+  "lg": "screen and (min-width: 768px)",
+);
+
+@mixin mq($bp) {
+  @media #{map-get($breakpoints, $bp)} {
+    @content; // 中身を出力
+  }
+}
+/* 
+@include mq(md) {
+    display: block;
+    } 
+*/
+
+/* flex */
+
+@mixin flex($justify: space-between, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+/* 
+    @include flex();
+    */
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 
+        @include flex-center;
+    */
+

@@ -1,0 +1,182 @@
+/* ------------------------------ */
+/*          リセットCSS */
+/* ------------------------------ */
+
+html {
+    color: #000;
+    background: #fff;
+  }
+  
+  body,
+  div,
+  dl,
+  dt,
+  dd,
+  ul,
+  ol,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  pre,
+  code,
+  form,
+  fieldset,
+  legend,
+  input,
+  textarea,
+  p,
+  blockquote,
+  th,
+  td {
+    margin: 0;
+    padding: 0;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  fieldset,
+  img {
+    border: 0;
+  }
+  
+  ​ address,
+  caption,
+  cite,
+  code,
+  dfn,
+  em,
+  strong,
+  th,
+  var {
+    font-style: normal;
+    font-weight: normal;
+  }
+  ​ol,
+  ul {
+    list-style: none;
+  }
+  
+  caption,
+  th {
+    text-align: left;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 100%;
+    font-weight: normal;
+  }
+  
+  q:before,
+  q:after {
+    content: "";
+  }
+  ​abbr,
+  acronym {
+    border: 0;
+    font-variant: normal;
+  }
+  
+  sup {
+    vertical-align: text-top;
+  }
+  
+  sub {
+    vertical-align: text-bottom;
+  }
+  
+  input,
+  textarea,
+  select,
+  button {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    font-size: 100%;
+    border-radius: 0;
+    border: none;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: inherit;
+  }
+  ​input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+  ​textarea {
+    resize: vertical;
+    display: block;
+  }
+  ​button {
+    padding: 0;
+    cursor: pointer;
+  }
+  ​legend {
+    color: #000;
+  }
+  ​main {
+    display: block;
+  }
+  ​a {
+    text-decoration: none;
+    color: inherit;
+  }
+  ​img {
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+  ​svg {
+    display: block;
+  }
+  ​* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+  }
+  
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  summary {
+    display: block; /* デフォルトでは inline-block なので block に変更 */
+    list-style: none; /* デフォルトのリストスタイルを消す */
+    padding: 0; /* デフォルトのパディングを消す */
+    margin: 0; /* デフォルトのマージンを消す */
+    font-weight: normal; /* デフォルトのフォントウェイトを消す */
+    color: inherit; /* デフォルトのテキストカラーを親要素から継承 */
+    background: none; /* デフォルトの背景を消す */
+    border: none; /* デフォルトのボーダーを消す */
+  }
+  
+  button {
+    all: unset; /* すべてのプロパティを初期化 */
+    display: inline-block; /* インラインブロック要素にする */
+    background: none; /* 背景を削除 */
+    border: none; /* ボーダーを削除 */
+    padding: 0; /* パディングを削除 */
+    margin: 0; /* マージンを削除 */
+    font: inherit; /* フォントの継承 */
+    cursor: pointer; /* カーソルをポインターにする */
+    text-align: center; /* テキストの中央揃え */
+    line-height: normal; /* 行の高さをデフォルトに設定 */
+    /* 必要に応じてその他のプロパティを追加 */
+  }
