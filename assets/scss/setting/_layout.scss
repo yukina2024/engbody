@@ -1,1 +1,11 @@
 @use "utility" as *;
+
+.l-section{
+    width: min(100% - 20px , $content-width);
+    margin-inline: auto;
+  }
+
+  .l-content{
+    width: min(100% - 20px , $section-width);
+    margin-inline: auto;
+  }

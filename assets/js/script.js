@@ -1,53 +1,54 @@
-
-  // Swiperの設定
-  const swiper = new Swiper(".swiper", {
-    loop: true,
-    navigation: {
-      nextEl: ".c-btn--right",
-      prevEl: ".c-btn--left",
-    }
-  });
-  
-  //tab切り替え
-  $(function () {
-    $(".staff-tabs__item").on("click", function () {
-      // タブを切り替え
-      $(".staff-tabs__item[aria-selected='true']").attr({
-        "aria-selected": "false",
-        tabindex: -1,
-      });
-      $(this).attr({
-        "aria-selected": "true",
-        tabindex: 0,
-      });
-  
-      // コンテンツを切り替え
-      const targetId = $(this).attr("aria-controls");
-      $(".staff-tabs__content").attr("hidden", true);
-      $(`#${targetId}`).removeAttr("hidden");
-    });
-  });
-
-  // FAQ アコーディオンメニュー
-$(document).ready(function() {
-  // FAQの質問をクリックしたときの処理
-  $(".faq__question").click(function() {
-    // faq__answerクラスを開いたり閉じたりする
-    $(this).next(".faq__answer").slideToggle().toggleClass("faq--open");
-    // 矢印を回転させる
-    $(this).toggleClass("rotate--315");
-  });
-
-  // ページロード時に全てのfaq__answerを閉じる
-  $(".faq__answer").hide();
+// Swiperの設定
+const swiper = new Swiper(".swiper", {
+  loop: false,
+  slidesPerView: 1,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 });
 
+//tab切り替え
+$(function () {
+  $(".staff-tabs__item").on("click", function () {
+    let index = $(".staff-tabs__item").index(this);
+
+    // タブの切り替え
+    $(".staff-tabs__item").removeClass("is-tab-active");
+    $(this).addClass("is-tab-active");
+
+    // コンテンツの切り替え
+    $(".staff-tabs__content")
+      .css("display", "none")
+      .removeClass("is-contents-active");
+    $(".staff-tabs__content")
+      .eq(index)
+      .css("display", "grid")
+      .addClass("is-contents-active");
+  });
+});
+
+// FAQ アコーディオンメニュー
+$(function () {
+  $(".staff-tabs__item").on("click", function () {
+    // クリックされたタブのインデックスを取得
+    let index = $(".staff-tabs__item").index(this);
+
+    // タブボタンのアクティブ状態を切り替え
+    $(".staff-tabs__item").removeClass("is-tab-active");
+    $(this).addClass("is-tab-active");
+
+    // タブコンテンツの表示切り替え
+    $(".staff-tabs__content").removeClass("is-contents-active");
+    $(".staff-tabs__content").eq(index).addClass("is-contents-active");
+  });
+});
 
 // ハンバーガーメニュー
 jQuery(function ($) {
   function toggleMenu(isOpen) {
     if (isOpen) {
-      $(".gloval-nav-wapper").addClass("is-active");
+      $(".gloval-nav-warpper").addClass("is-active");
       $(".c-hamburger-btn").addClass("close");
 
       // ロゴの切り替えを一括で管理
@@ -59,7 +60,7 @@ jQuery(function ($) {
       $(".l-header").addClass("l-header--menu-open"); // ヘッダーの背景をグローバルナビと同じにする
       $(".l-header__hamburger-text").addClass("is-active"); // メニュー消す
     } else {
-      $(".gloval-nav-wapper").removeClass("is-active");
+      $(".gloval-nav-warpper").removeClass("is-active");
 
       // ロゴの切り替えを一括で管理
       $(".l-header__logo-black").removeClass("is-active").hide(); // 黒ロゴを隠す
@@ -74,13 +75,10 @@ jQuery(function ($) {
   }
 
   $(".c-hamburger-btn, .c-hamburger-btn--black").on("click", function () {
-    const isOpen = $(".gloval-nav-wapper").hasClass("is-active");
+    const isOpen = $(".gloval-nav-warpper").hasClass("is-active");
     toggleMenu(!isOpen); // 開閉を切り替える
   });
 
   // 初期状態でメニューを閉じた状態にする
   toggleMenu(false);
 });
-
-
-

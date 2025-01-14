@@ -63,9 +63,7 @@ body {
     }
   }
   
-  .l-section{
-    width: min(100% - 20px , $content-width)
-  }
+
 
   /***************************************
   btn
@@ -83,6 +81,12 @@ body {
     border-radius: 50px;
     display: grid;
     place-items: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    &--white{
+      background-color: #fff;
+      color: $sub-c;
+    }
   }
 
 
@@ -90,3 +94,29 @@ body {
   title
   ****************************************/
 
+  .section__heading{
+    font-size: fz(64);
+    line-height: 1;
+    font-weight: 600;
+    color: #fff;
+    @include mq(md) {
+      font-size: fz(48);
+    }
+    &--black{
+      color: $basic-c;
+    }
+  }
+  .section__heading-sub{
+    display: block;
+    margin-block-start: 10px;
+    font-size: fz(20);
+    line-height: 1;
+    font-weight: 600;
+    color: #fff;
+    @include mq(md) {
+      font-size: fz(16);
+    }
+    &--pink{
+      color: $sub-c;
+    }
+  }

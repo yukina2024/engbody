@@ -11,10 +11,10 @@
 /*whith*/
 
 //content
-$content-width: 1440px;
+$content-width: 1410px;
 
 //section
-$section-width: 901px;
+$section-width: 1080px;
 
 //sp
 $width-clac-5: calc(100% - 5%);
@@ -46,8 +46,10 @@ $font-size-18: clamp(0.875rem, 0.792rem + 0.42vw, 1.125rem);
 $font-size-16: clamp(0.75rem, 0.667rem + 0.42vw, 1rem);
 //12-16
 
+@use "sass:math";
+
 @function fz($px) {
-  @return ($px / 16) * 1rem;
+  @return math.div($px, 16) * 1rem;
 }
 
 /* 使用例
