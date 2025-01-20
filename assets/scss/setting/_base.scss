@@ -108,8 +108,8 @@ about
   align-items: flex-end;
   position: relative;
   .media__img {
-  flex: 1 1 auto;
-  height: fz(550);
+    flex: 1 1 auto;
+    height: fz(550);
     img {
       width: 100%;
       height: 100%;
@@ -123,14 +123,14 @@ about
     position: relative;
     flex: 0 0 38.54%;
     width: 100%;
-    height: 32.50%;
+    height: 32.5%;
     background-color: #fff;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
     margin-inline-start: -84px;
     margin-block-end: -10px;
     z-index: 1;
-    &:last-child{
+    &:last-child {
       margin-inline-end: -84px;
     }
   }
@@ -179,9 +179,9 @@ staff
   background-position: top center;
 }
 
-.staff__inner{
-    padding-block-start: 96px;
-    padding-block-end: 136px;
+.staff__inner {
+  padding-block-start: 96px;
+  padding-block-end: 136px;
 }
 
 .staff-tabs__content {
@@ -192,7 +192,7 @@ staff
   display: block;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px - 16px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   place-items: center;
   gap: 15px;
 }
@@ -220,7 +220,7 @@ staff
 }
 
 .card {
-  width: 360px;
+  width: 350px;
   height: 467px;
   background-color: #fff;
   .card__img {
@@ -230,9 +230,11 @@ staff
     object-fit: cover;
   }
 }
-.card__text{
+.card__text {
   padding: 20px 20px 0 20px;
   font-size: fz(15);
+  line-height: calc(25.5 / 15);
+  font-weight: 300;
 }
 
 /***************************************
@@ -243,17 +245,17 @@ studo
   width: min(100% - 30px, $content-width);
   margin-block-start: 60px;
   margin-inline: auto;
-  position: relative;
 }
 
-.swiper{
+.swiper {
   width: min(100% - 30px, $section-width);
   margin-block-start: 30px;
-  height: fz(670);
-  .studio__img{
+  height: 670px;
+  .studio__img {
     width: 100%;
-    height: 100%;
+    height: 670px;
     object-fit: cover;
+    position: relative;
   }
 }
 .swiper-button-next,
@@ -270,23 +272,29 @@ studo
     font-size: fz(20);
   }
 }
+.swiper-button-warpper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .swiper-button-next {
-  top: 55%;
-  transform: translateY(-50%);
-  right: 6%;
+  transform: translateX(35px);
 }
 .swiper-button-prev {
-  top: 55%;
-  transform: translateY(-50%);
-  left: 6%;
+  transform: translateX(-35px);
 }
-
 
 /***************************************
 price
 ****************************************/
 
-.price { 
+.price {
   width: 100%;
   height: max(886px, 100%);
   margin-block-start: 29px;
@@ -297,42 +305,61 @@ price
   background-position: top center;
   padding-block-end: 136px;
 }
-.price__heading{
+.price__heading {
   width: min(100% - 30px, $section-width);
   margin-inline: auto;
   padding-block-start: 96px;
 }
 
-.price__inner{
-  width: min(100% - 30px, $section-width);
+.price__inner {
+  width: min(100% - 30px, 1110px);
   margin-block-start: 60px;
   margin-inline: auto;
   display: grid;
-  grid-template-columns: repeat(auto-full, minmax(360px, 3fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   place-items: center;
   gap: 15px;
 }
 
-.price__item{
-  width: min(100% - 30px, 360px);
-  height: fv(489);
+.price__item {
+  width: 360px;
+  height: 489px;
   background-color: #fff;
   border-radius: 8px;
-  .price__item-warpper{
-    width: calc(100% - 40px);
-    padding: 30px 20px;
+  @include flex-center();
+  flex-direction: column;
+  .price__itemHeading {
+    padding-block: 40px 20px;
+    text-align: center;
+  }
+  .price__itemHeading-top {
+    font-size: fz(26);
+    line-height: calc(29.9 / 26);
+    font-weight: 600;
+    color: $sub-c;
+  }
+  .price__itemPrice {
+    margin-block-start: 10px;
+    font-size: fz(48);
+    line-height: calc(55.2 / 48);
+  }
+  .price__item-warpper {
+    width: 95%;
+    padding-block: 30px;
+    text-align: center;
+    border-top: solid 1px #d9d9d9;
   }
 
-  .price__item-title{
-    font-size: fz(20);
-    line-height: 1.5;
-    font-weight: bold;
-
+  .price__itemText {
+    font-size: fz(18);
+    line-height: calc(20.7 / 18);
   }
-  .price__item-text{
-    font-size: fz(15);
-    line-height: 1.8;
-    margin-block-start: 15px;
+  .price__itemText--sub {
+    display: block;
+    font-size: fz(16);
+    line-height: calc(18.4 / 16);
+    margin-block-start: 5px;
+    font-weight: 600;
   }
 }
 /***************************************
@@ -342,29 +369,50 @@ faq
 .faq {
   width: min(100% - 30px, $section-width);
   margin-block-start: 60px;
+  margin-block-end: 70px;
   margin-inline: auto;
+}
+
+.faq__inner {
+  margin-block-start: 30px;
+  width: min(100% - 30px, $section-width);
+}
+
+.faq__list {
+  border-bottom: solid 1px #d9d9d9;
+  padding-block: 19px 15px;
+  padding-inline: 40px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.faq__question {
+}
+
+.faq__answer {
+  margin-block-start: 15px;
 }
 
 /***************************************
 contact
 ****************************************/
-.contact{
+.contact {
   width: 100%;
   background-color: $sub-c;
 }
-.contact__img{
+.contact__img {
   width: 100%;
   height: 370px;
   object-fit: cover;
 }
 
-.contact__inner{
+.contact__inner {
   width: min(100% - 30px, $section-width);
   margin-inline: auto;
   padding-block: 50px;
 }
 
-.contact__text{
+.contact__text {
   font-size: fz(64);
   line-height: calc(73.5 / 64);
   color: #fff;
@@ -372,7 +420,7 @@ contact
   text-align: center;
 }
 
-.contact__btn{
+.contact__btn {
   margin-block-start: 15px;
   @include flex-center();
 }

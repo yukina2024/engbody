@@ -4,7 +4,6 @@
 共通パーツ
 ****************************************/
 
-
 /*
 *{
     outline: 1px solid red !important;
@@ -13,110 +12,106 @@
 */
 /* ゆっくり遷移する */
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-
 body {
-    font-family: "Zen Kaku Gothic Antique", serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 1;
-    margin: 0;
-    padding: 0;
-    color: $basic-c;
-  }
-  
-  a {
-    text-decoration: none;
-    color: $basic-c;
-  }
-  
-  ul,
-  li {
-    list-style: none;
-  }
-  figure {
-    margin: 0;
-    padding: 0;
-  }
-  
-  details summary::-webkit-details-marker {
-    /* iOSで表示されるデフォルトの三角形アイコンを消す */
-    display: none;
-  }
-  /* ハンバーメニューが開いたときに下の要素へのクリックを無効化 */
-  .body-no-scroll {
-    pointer-events: none;
-  }
-  
-  .font-c-pink {
-    color: $sub-c;
-  }
-  
-  /* デフォルトでは横に並べる */
-  .sp__br {
-    display: inline;
-    @include mq(md) {
-      display: block;
-    }
-  }
-  
+  font-family: "Zen Kaku Gothic Antique", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  color: $basic-c;
+}
 
+a {
+  text-decoration: none;
+  color: $basic-c;
+}
 
-  /***************************************
+ul,
+li {
+  list-style: none;
+}
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+details summary::-webkit-details-marker {
+  /* iOSで表示されるデフォルトの三角形アイコンを消す */
+  display: none;
+}
+/* ハンバーメニューが開いたときに下の要素へのクリックを無効化 */
+.body-no-scroll {
+  pointer-events: none;
+}
+
+.font-c-pink {
+  color: $sub-c;
+}
+
+/* デフォルトでは横に並べる */
+.sp__br {
+  display: inline;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+/***************************************
   btn
   ****************************************/
 
-  .btn__primary{
-    display: inline-block;
-    width: min(100%, 370px);
-    height: 80px;
-    aspect-ratio: 370 / 80;
-    background-color: $sub-c;
-    color: #fff;
-    font-size: fz(20);
-    font-weight: 600;
-    border-radius: 50px;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    transition: all 0.3s;
-    &--white{
-      background-color: #fff;
-      color: $sub-c;
-    }
+.btn__primary {
+  display: inline-block;
+  width: min(100%, 370px);
+  height: 80px;
+  aspect-ratio: 370 / 80;
+  background-color: $sub-c;
+  color: #fff;
+  font-size: fz(20);
+  font-weight: 600;
+  border-radius: 50px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  &--white {
+    background-color: #fff;
+    color: $sub-c;
   }
+}
 
-
-  /***************************************
+/***************************************
   title
   ****************************************/
 
-  .section__heading{
-    font-size: fz(64);
-    line-height: 1;
-    font-weight: 600;
-    color: #fff;
-    @include mq(md) {
-      font-size: fz(48);
-    }
-    &--black{
-      color: $basic-c;
-    }
+.section__heading {
+  font-size: fz(64);
+  line-height: 1;
+  font-weight: 600;
+  color: #fff;
+  @include mq(md) {
+    font-size: fz(48);
   }
-  .section__heading-sub{
-    display: block;
-    margin-block-start: 10px;
-    font-size: fz(20);
-    line-height: 1;
-    font-weight: 600;
-    color: #fff;
-    @include mq(md) {
-      font-size: fz(16);
-    }
-    &--pink{
-      color: $sub-c;
-    }
+  &--black {
+    color: $basic-c;
   }
+}
+.section__heading-sub {
+  display: block;
+  margin-block-start: 10px;
+  font-size: fz(20);
+  line-height: 1;
+  font-weight: 600;
+  color: #fff;
+  @include mq(md) {
+    font-size: fz(16);
+  }
+  &--pink {
+    color: $sub-c;
+  }
+}
