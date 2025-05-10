@@ -811,10 +811,6 @@ footer
 /***************************************
 共通パーツ
 ****************************************/
-* {
-  outline: 1px solid red !important;
-}
-
 /* ゆっくり遷移する */
 html {
   scroll-behavior: smooth;
@@ -829,7 +825,6 @@ body {
   margin: 0;
   padding: 0;
   color: #111111;
-  outline: 1px solid red !important;
 }
 
 a {
