@@ -2,25 +2,44 @@
 
 /*---------------------------   
 header         
----------------------------*/       
+---------------------------*/
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .header__inner {
-    width: min(100% - 35px, 1440px);
-    padding-inline-start: 35px;
+  width: min(100% - 35px, 1410px);
+  padding-inline: 35px;
+  margin-inline: auto;
+  height: 100px;
+  line-height: 100px;
+  @include mq(md) {
+    display: none;
+  }
+}
+.header__logo {
+  display: block;
+}
+
+.header__spInner {
+  display: none;
+  @include mq(md) {
+    display: block;
+    width: calc(100% - 40px);
+    height: 100px;
+    padding-inline: 20px;
+    margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include mq(md) {
-        padding-inline: 20px;
-    }
+  }
 }
-.header__btn{
-    opacity: 0;
+
+.header__btn {
+  width: 250px;
+  height: 60px;
 }

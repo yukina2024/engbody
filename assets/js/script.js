@@ -1,13 +1,3 @@
-// Swiperの設定
-const swiper = new Swiper(".swiper", {
-  loop: false,
-  slidesPerView: 1,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
-
 //tab切り替え
 $(function () {
   $(".staff-tabs__item").on("click", function () {

@@ -12,10 +12,12 @@ footer
 }
 .footer__inner {
   @include flex-center;
-  width: $content-width;
+  width: min(100% - 30px, 1410px);
   height: 100%;
-  padding-inline: 35px;
+  padding-inline: 15px;
+  margin-inline: auto;
   @include mq(md) {
+    width: calc(100% - 40px);
     padding-inline: 20px;
   }
 }

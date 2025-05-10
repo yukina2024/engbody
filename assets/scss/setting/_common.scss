@@ -4,12 +4,10 @@
 共通パーツ
 ****************************************/
 
-/*
-*{
-    outline: 1px solid red !important;
+* {
+  outline: 1px solid red !important;
 }
 
-*/
 /* ゆっくり遷移する */
 html {
   scroll-behavior: smooth;
@@ -24,6 +22,7 @@ body {
   margin: 0;
   padding: 0;
   color: $basic-c;
+  outline: 1px solid red !important;
 }
 
 a {

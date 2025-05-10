@@ -43,6 +43,10 @@ mixin
 /* 
     @include flex-center;
     */
+p {
+  position: relative;
+}
+
 /*---------------------------
 主なレイアウト
 ---------------------------*/
@@ -122,7 +126,7 @@ mixin
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: italic;
-  color: #EB51C2;
+  color: #eb51c2;
 }
 
 .fv__text-heading {
@@ -199,7 +203,7 @@ about
 .about__media .media__heading {
   font-size: 1.5rem;
   line-height: 1.1;
-  color: #EB51C2;
+  color: #eb51c2;
 }
 .about__media .media__title {
   font-size: 2rem;
@@ -324,7 +328,7 @@ studo
   height: 60px;
   background-color: #fff;
   border-radius: 50%;
-  color: #EB51C2;
+  color: #eb51c2;
   position: absolute;
   z-index: 2;
 }
@@ -403,7 +407,7 @@ price
   font-size: 1.625rem;
   line-height: 1.15;
   font-weight: 600;
-  color: #EB51C2;
+  color: #eb51c2;
 }
 .price__item .price__itemPrice {
   margin-block-start: 10px;
@@ -460,7 +464,7 @@ contact
 ****************************************/
 .contact {
   width: 100%;
-  background-color: #EB51C2;
+  background-color: #eb51c2;
 }
 
 .contact__img {
@@ -688,28 +692,49 @@ button {
 header         
 ---------------------------*/
 .header {
+  width: 100%;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 100;
 }
 
 .header__inner {
-  width: min(100% - 35px, 1440px);
-  padding-inline-start: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  width: min(100% - 35px, 1410px);
+  padding-inline: 35px;
+  margin-inline: auto;
+  height: 100px;
+  line-height: 100px;
 }
 @media screen and (max-width: 767px) {
   .header__inner {
+    display: none;
+  }
+}
+
+.header__logo {
+  display: block;
+}
+
+.header__spInner {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__spInner {
+    display: block;
+    width: calc(100% - 40px);
+    height: 100px;
     padding-inline: 20px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .header__btn {
-  opacity: 0;
+  width: 250px;
+  height: 60px;
 }
 
 /***************************************
@@ -726,12 +751,14 @@ footer
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1410px;
+  width: min(100% - 30px, 1410px);
   height: 100%;
-  padding-inline: 35px;
+  padding-inline: 15px;
+  margin-inline: auto;
 }
 @media screen and (max-width: 767px) {
   .footer__inner {
+    width: calc(100% - 40px);
     padding-inline: 20px;
   }
 }
@@ -740,7 +767,7 @@ footer
   width: 80px;
   height: 80px;
   background-color: #fff;
-  color: #EB51C2;
+  color: #eb51c2;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -758,24 +785,36 @@ footer
 }
 
 .l-section {
-  width: min(100% - 20px, 1410px);
+  width: min(100% - 35px, 1410px);
+  padding-inline: 15px;
   margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .l-section {
+    width: calc(100% - 40px);
+    padding-inline: 20px;
+  }
 }
 
 .l-content {
-  width: min(100% - 20px, 1080px);
+  width: min(100% - 35px, 1080px);
+  padding-inline: 15px;
   margin-inline: auto;
+}
+@media screen and (max-width: 767px) {
+  .l-content {
+    width: calc(100% - 40px);
+    padding-inline: 20px;
+  }
 }
 
 /***************************************
 共通パーツ
 ****************************************/
-/*
-*{
-    outline: 1px solid red !important;
+* {
+  outline: 1px solid red !important;
 }
 
-*/
 /* ゆっくり遷移する */
 html {
   scroll-behavior: smooth;
@@ -790,6 +829,7 @@ body {
   margin: 0;
   padding: 0;
   color: #111111;
+  outline: 1px solid red !important;
 }
 
 a {
@@ -818,7 +858,7 @@ details summary::-webkit-details-marker {
 }
 
 .font-c-pink {
-  color: #EB51C2;
+  color: #eb51c2;
 }
 
 /* デフォルトでは横に並べる */
@@ -839,7 +879,7 @@ details summary::-webkit-details-marker {
   width: min(100%, 370px);
   height: 80px;
   aspect-ratio: 370/80;
-  background-color: #EB51C2;
+  background-color: #eb51c2;
   color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
@@ -851,7 +891,7 @@ details summary::-webkit-details-marker {
 }
 .btn__primary--white {
   background-color: #fff;
-  color: #EB51C2;
+  color: #eb51c2;
 }
 
 /***************************************
@@ -886,5 +926,5 @@ details summary::-webkit-details-marker {
   }
 }
 .section__heading-sub--pink {
-  color: #EB51C2;
+  color: #eb51c2;
 }/*# sourceMappingURL=style.css.map */
