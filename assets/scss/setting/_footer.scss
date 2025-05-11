@@ -9,35 +9,60 @@ footer
   height: 223px;
   background-color: $basic-c;
   color: #fff;
+  position: relative;
 }
 .footer__inner {
-  @include flex-center;
-  width: min(100% - 30px, 1410px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   height: 100%;
-  padding-inline: 15px;
-  margin-inline: auto;
   @include mq(md) {
     width: calc(100% - 40px);
     padding-inline: 20px;
+    margin-inline: auto;
+    flex-direction: column;
   }
 }
+
 .top__btn {
-  width: 80px;
-  height: 80px;
-  background-color: #fff;
-  color: $sub-c;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  @include mq(md) {
+    right: 10px;
+    top: auto;
+    bottom: 20px;
+  }
   .top__btn-link {
-    display: inline-block;
-    color: inherit;
-    line-height: 1;
-    width: 1.5em;
-    height: 1.5em;
-    border: 0.3em solid currentColor;
-    border-left: 0;
-    border-bottom: 0;
-    transform: translateY(25%) rotate(-45deg);
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: all 0.3s;
+    @include mq(md) {
+      width: 50px;
+      height: 50px;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      line-height: 1;
+      color: $sub-c;
+      width: 1.5em;
+      height: 1.5em;
+      border: 0.3em solid currentColor;
+      border-left: 0;
+      border-bottom: 0;
+      transform: translateY(25%) rotate(-45deg);
+      @include mq(md) {
+        width: 1em;
+        height: 1em;
+      }
+    }
   }
 }

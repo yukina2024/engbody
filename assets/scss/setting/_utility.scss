@@ -130,3 +130,10 @@ $breakpoints: (
 p {
   position: relative;
 }
+
+.sp__br {
+  display: none;
+  @include mq(sp) {
+    display: block;
+  }
+}

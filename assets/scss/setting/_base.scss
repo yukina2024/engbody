@@ -39,6 +39,9 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: italic;
+  @include mq(md) {
+    font-size: fz(60);
+  }
 }
 .fv__heading-text {
   background-color: #fff;
@@ -51,6 +54,12 @@
   line-height: 1;
   background-color: #fff;
   font-weight: 600;
+  @include mq(md) {
+    font-size: fz(20);
+  }
+  @include mq(sp) {
+    font-size: fz(16);
+  }
 }
 .fv__btn {
   margin-block-start: 30px;
@@ -61,6 +70,9 @@
   margin-block-start: -30px;
   margin-inline: auto;
   text-align: center;
+  @include mq(md) {
+    width: calc(100% - 40px);
+  }
 }
 .fv__title {
   font-size: fz(108);
@@ -70,12 +82,18 @@
   font-weight: 600;
   font-style: italic;
   color: $sub-c;
+  @include mq(md) {
+    font-size: fz(56);
+  }
 }
 .fv__text-heading {
   font-size: fz(32);
   font-weight: bold;
   line-height: 1.1;
   margin-block-start: 10px;
+  @include mq(md) {
+    font-size: fz(16);
+  }
 }
 .fv__text {
   font-size: fz(16);
@@ -101,15 +119,26 @@ about
   flex-direction: column;
   box-sizing: border-box;
   gap: 100px;
+  @include mq(md) {
+    width: calc(100% - 40px);
+    gap: 50px;
+  }
 }
 
 .about__media {
   display: flex;
   align-items: flex-end;
   position: relative;
+  @include mq(md) {
+    flex-direction: column;
+  }
   .media__img {
     flex: 1 1 auto;
-    height: fz(550);
+    height: 550px;
+    @include mq(md) {
+      height: 300px;
+      flex: 0 0 100%;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -118,6 +147,9 @@ about
   }
   &:last-child {
     flex-direction: row-reverse;
+    @include mq(md) {
+      flex-direction: column;
+    }
   }
   .media__body {
     position: relative;
@@ -130,8 +162,15 @@ about
     margin-inline-start: -84px;
     margin-block-end: -10px;
     z-index: 1;
+    @include mq(md) {
+      margin-inline-start: 0;
+      margin-block-end: 0;
+    }
     &:last-child {
       margin-inline-end: -84px;
+      @include mq(md) {
+        margin-inline-end: 0;
+      }
     }
   }
   .media__body-inner {
@@ -144,17 +183,26 @@ about
     font-size: fz(24);
     line-height: 1.1;
     color: $sub-c;
+    @include mq(md) {
+      font-size: fz(20);
+    }
   }
   .media__title {
     font-size: fz(32);
     line-height: 1.5;
     font-weight: bold;
     margin-block-start: 20px;
+    @include mq(md) {
+      font-size: fz(24);
+    }
   }
   .media__text {
     font-size: fz(15);
     line-height: 1.8;
     margin-block-start: 15px;
+    @include mq(md) {
+      font-size: fz(14);
+    }
   }
 }
 .about__btn {
@@ -245,17 +293,28 @@ studo
   width: min(100% - 30px, $content-width);
   margin-block-start: 60px;
   margin-inline: auto;
+  @include mq(md) {
+    margin-block-start: 0;
+  }
 }
 
 .swiper {
   width: min(100% - 30px, $section-width);
   margin-block-start: 30px;
   height: 670px;
+  @include mq(md) {
+    width: calc(100% - 40px);
+    margin-inline: auto;
+    height: 350px;
+  }
   .studio__img {
     width: 100%;
     height: 670px;
     object-fit: cover;
     position: relative;
+    @include mq(md) {
+      height: 350px;
+    }
   }
 }
 .swiper-button-next,
@@ -267,6 +326,10 @@ studo
   color: $sub-c;
   position: absolute;
   z-index: 2;
+  @include mq(md) {
+    width: 35px;
+    height: 35px;
+  }
   &::after,
   &::before {
     font-size: fz(20);
@@ -319,6 +382,9 @@ price
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   place-items: center;
   gap: 15px;
+  @include mq(sp) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 }
 
 .price__item {
@@ -328,6 +394,12 @@ price
   border-radius: 8px;
   @include flex-center();
   flex-direction: column;
+  @include mq(sp) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 360 / 489;
+    margin-inline: auto;
+  }
   .price__itemHeading {
     padding-block: 40px 20px;
     text-align: center;
@@ -371,6 +443,9 @@ faq
   margin-block-start: 60px;
   margin-block-end: 70px;
   margin-inline: auto;
+  @include mq(md) {
+    margin-block-start: 0;
+  }
 }
 
 .faq__inner {
@@ -387,10 +462,21 @@ faq
 }
 
 .faq__question {
+  font-size: fz(16);
+  line-height: calc(20.7 / 16);
+  font-weight: 600;
+  @include mq(md) {
+    font-size: fz(14);
+  }
 }
 
 .faq__answer {
   margin-block-start: 15px;
+  font-size: fz(16);
+  line-height: calc(20.7 / 16);
+  @include mq(md) {
+    font-size: fz(14);
+  }
 }
 
 /***************************************
@@ -418,9 +504,15 @@ contact
   color: #fff;
   font-weight: 600;
   text-align: center;
+  @include mq(md) {
+    font-size: fz(32);
+  }
 }
 
 .contact__btn {
   margin-block-start: 15px;
   @include flex-center();
+  @include mq(md) {
+    margin-block-start: 30px;
+  }
 }

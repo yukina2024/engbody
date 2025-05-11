@@ -67,7 +67,6 @@ details summary::-webkit-details-marker {
 .btn__primary {
   display: inline-block;
   width: min(100%, 370px);
-  height: 80px;
   aspect-ratio: 370 / 80;
   background-color: $sub-c;
   color: #fff;
@@ -78,9 +77,21 @@ details summary::-webkit-details-marker {
   place-items: center;
   cursor: pointer;
   transition: all 0.3s;
+  @include mq(md) {
+    width: min(100%, 250px);
+    height: 60px;
+    font-size: fz(16);
+  }
   &--white {
     background-color: #fff;
     color: $sub-c;
+  }
+  &--header {
+    @include mq(md) {
+      font-size: fz(14);
+      width: min(100%, 200px);
+      height: 50px;
+    }
   }
 }
 
